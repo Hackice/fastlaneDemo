@@ -59,9 +59,13 @@ platform :ios do
     # 升版本号
     increment_build_number_in_plist
 
+    appversion = get_version_number_from_plist
+
+    buildversion = get_build_number_from_plist
+
     # 打标签
     add_git_tag(
-      tag:appversion/newBuildversion
+      tag:appversion/buildversion
     )
 
     # 推送标签

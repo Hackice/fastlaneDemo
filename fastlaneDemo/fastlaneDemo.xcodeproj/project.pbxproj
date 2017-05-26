@@ -336,6 +336,7 @@
 				64D8E6841ED7C66700344BF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

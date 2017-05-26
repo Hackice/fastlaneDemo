@@ -49,24 +49,31 @@ platform :ios do
 
   desc "Pull the git, then push new tag, then pull stack, then change build version."
   lane :pulltagstack do
-    
+    #拉代码
     git_pull
+
+    #恢复暂存代码
+    sh(git stash pop)
+
+    # 升版本号
+    increment_build_number(
+      build_number: ENV["app_versionCode"]
+    )
+
+    #打标签
     add_git_tag(
-      grouping:ENV["app_versionName"]
+      grouping:ENV["app_versionName"],
       build_number:ENV["app_versionCode"]
     )
 
-    increment_build_number(
-      build_number: ENV["app_versionCode"]
-      )
-      
-    gym # Build your app - more options available
+    # 编译  
+    gym
+
+    # 通知开发者
     slack(
-    message: "所有操作已经完成."
+      message: "所有操作已经完成."
     )
   end
-
-  # You can define as many lanes as you want
 
   after_all do |lane|
     # This block is called, only if the executed lane was successful

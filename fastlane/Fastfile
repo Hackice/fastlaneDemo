@@ -65,8 +65,7 @@ platform :ios do
 
     # 打标签
     add_git_tag(
-      grouping: appversion,
-      build_number: buildversion
+      tag: appversion"/"buildversion
     )
 
     # 推送标签

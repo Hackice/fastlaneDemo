@@ -13,4 +13,4 @@ increment_build_number方法会默认读取和fastlane同级目录的项目文�
 
 最后还是决定读取info.plist文件了。。。路径又出问题了。。。类型转换又出问题了。。。
 
-最后决定使用插件versioning，因为它对读写info.plist进行了很好的封装
+最后决定使用插件versioning，因为它对读写info.plist进行了很好的封装，赞！

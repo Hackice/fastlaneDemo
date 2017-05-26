@@ -57,12 +57,12 @@ platform :ios do
     sh("git stash pop")
 
     # 获取版本号
-    appversion = get_info_plist_value(path: "../fastlaneDemo/Info.plist", key: "CFBundleShortVersionString")
+    appversion = get_info_plist_value(path: "/Users/marcuswang/开发/Learn/fastlaneDemo/fastlaneDemo/Info.plist", key: "CFBundleShortVersionString")
 
-    buildversion = get_info_plist_value(path: "../fastlaneDemo/Info.plist", key: "CFBundleVersion")
+    buildversion = get_info_plist_value(path: "/Users/marcuswang/开发/Learn/fastlaneDemo/fastlaneDemo/Info.plist", key: "CFBundleVersion")
     # 升版本号
     newBuildversion = buildversion + 1
-    set_info_plist_value(path: "../fastlaneDemo/Info.plist", key: "CFBundleVersion", value: newBuildversion)
+    set_info_plist_value(path: "/Users/marcuswang/开发/Learn/fastlaneDemo/fastlaneDemo/Info.plist", key: "CFBundleVersion", value: newBuildversion)
 
     # 打标签
     add_git_tag(

@@ -51,7 +51,7 @@ platform :ios do
   lane :pulltagstack do
    
     # 拉代码
-    git_pull
+    sh("git pull --rebase")
 
     # 恢复暂存代码
     sh("git stash pop")

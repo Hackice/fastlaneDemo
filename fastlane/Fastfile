@@ -61,14 +61,16 @@ platform :ios do
       build_number: ENV["app_versionCode"]
     )
 
-    #打标签
+    # 打标签
     add_git_tag(
-      grouping:ENV["app_versionName"],
-      build_number:ENV["app_versionCode"]
+      tag:ENV["app_versionName"]/ENV["app_versionCode"]
     )
 
+    # 推送标签
+    push_git_tags
+
     # 编译  
-    gym
+    #gym
 
     # 暂存代码
     sh("git stash")

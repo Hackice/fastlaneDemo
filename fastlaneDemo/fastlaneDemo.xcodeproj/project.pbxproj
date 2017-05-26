@@ -12,6 +12,8 @@
 		64D8E6791ED7C66700344BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64D8E6771ED7C66700344BF9 /* Main.storyboard */; };
 		64D8E67B1ED7C66700344BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64D8E67A1ED7C66700344BF9 /* Assets.xcassets */; };
 		64D8E67E1ED7C66700344BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64D8E67C1ED7C66700344BF9 /* LaunchScreen.storyboard */; };
+		64D8E6881ED7C8F700344BF9 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D8E6861ED7C8F700344BF9 /* Fabric.framework */; };
+		64D8E6891ED7C8F700344BF9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D8E6871ED7C8F700344BF9 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		64D8E67A1ED7C66700344BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64D8E67D1ED7C66700344BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64D8E67F1ED7C66700344BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64D8E6861ED7C8F700344BF9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		64D8E6871ED7C8F700344BF9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64D8E6891ED7C8F700344BF9 /* Crashlytics.framework in Frameworks */,
+				64D8E6881ED7C8F700344BF9 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,8 @@
 				64D8E67A1ED7C66700344BF9 /* Assets.xcassets */,
 				64D8E67C1ED7C66700344BF9 /* LaunchScreen.storyboard */,
 				64D8E67F1ED7C66700344BF9 /* Info.plist */,
+				64D8E6861ED7C8F700344BF9 /* Fabric.framework */,
+				64D8E6871ED7C8F700344BF9 /* Crashlytics.framework */,
 			);
 			path = fastlaneDemo;
 			sourceTree = "<group>";
@@ -74,6 +82,7 @@
 				64D8E66C1ED7C66700344BF9 /* Sources */,
 				64D8E66D1ED7C66700344BF9 /* Frameworks */,
 				64D8E66E1ED7C66700344BF9 /* Resources */,
+				64D8E6851ED7C8D300344BF9 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -131,6 +140,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64D8E6851ED7C8D300344BF9 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 02bec6e3ce7fd19555c827fc6c18f9170d08d9c9 674b76d0c5f976f996a3e710e0226984357a6c179114503cfc5b0512b2329360";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64D8E66C1ED7C66700344BF9 /* Sources */ = {
@@ -262,6 +288,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W5L6Y9RPYG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/fastlaneDemo",
+				);
 				INFOPLIST_FILE = fastlaneDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.hackice.fastlaneDemo;
@@ -275,6 +305,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W5L6Y9RPYG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/fastlaneDemo",
+				);
 				INFOPLIST_FILE = fastlaneDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wang.hackice.fastlaneDemo;

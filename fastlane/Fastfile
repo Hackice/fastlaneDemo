@@ -51,6 +51,15 @@ platform :ios do
   lane :pulltagstack do
     
     git_pull
+    add_git_tag(
+      grouping:ENV["app_versionName"]
+      build_number:ENV["app_versionCode"]
+    )
+
+    increment_build_number(
+      build_number: ENV["app_versionCode"]
+      )
+      
     gym # Build your app - more options available
     slack(
     message: "所有操作已经完成."

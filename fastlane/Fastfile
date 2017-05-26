@@ -61,8 +61,8 @@ platform :ios do
 
     buildversion = get_info_plist_value(path: "/Users/marcuswang/开发/Learn/fastlaneDemo/fastlaneDemo/Info.plist", key: "CFBundleVersion")
     # 升版本号
-    newBuildversion = buildversion + 1
-    set_info_plist_value(path: "/Users/marcuswang/开发/Learn/fastlaneDemo/fastlaneDemo/Info.plist", key: "CFBundleVersion", value: newBuildversion)
+    newBuildversion = int(buildversion) + 1
+    set_info_plist_value(path: "/Users/marcuswang/开发/Learn/fastlaneDemo/fastlaneDemo/Info.plist", key: "CFBundleVersion", value: str(newBuildversion))
 
     # 打标签
     add_git_tag(

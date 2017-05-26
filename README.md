@@ -12,3 +12,5 @@ increment_build_number方法会默认读取和fastlane同级目录的项目文�
 此外increment_build_number还需要开启xcode响应的功能，详情请见：https://developer.apple.com/library/content/qa/qa1827/_index.html
 
 最后还是决定读取info.plist文件了。。。路径又出问题了。。。类型转换又出问题了。。。
+
+最后决定使用插件versioning，因为它对读写info.plist进行了很好的封装

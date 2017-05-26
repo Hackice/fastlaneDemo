@@ -10,3 +10,5 @@ increment_build_number方法会默认读取和fastlane同级目录的项目文�
 [11:37:49]: Before being able to increment and read the version number from your Xcode project, you first need to setup your project properly. Please follow the guide at https://developer.apple.com/library/content/qa/qa1827/_index.html
 
 此外increment_build_number还需要开启xcode响应的功能，详情请见：https://developer.apple.com/library/content/qa/qa1827/_index.html
+
+最后还是决定读取info.plist文件了。。。

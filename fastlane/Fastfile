@@ -54,7 +54,7 @@ platform :ios do
     git_pull
 
     # 恢复暂存代码
-    sh(git stash pop)
+    sh("git stash pop")
 
     # 升版本号
     increment_build_number(
@@ -71,7 +71,7 @@ platform :ios do
     gym
 
     # 暂存代码
-    sh(git stash)
+    sh("git stash")
 
     # 通知开发者
     slack(

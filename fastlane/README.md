@@ -47,6 +47,11 @@ This will also make sure the profile is up to date
 fastlane ios release
 ```
 Deploy a new version to the App Store
+### ios pulltagstack
+```
+fastlane ios pulltagstack
+```
+Pull the git, then push new tag, then pull stack, then change build version.
 
 ----
 

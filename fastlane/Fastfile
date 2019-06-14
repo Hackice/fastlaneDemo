@@ -83,6 +83,29 @@ platform :ios do
     )
   end
 
+  desc "自增buildversion."
+  lane :oneplus do
+    
+    ensure_git_status_clean  
+
+    # 升版本号
+    increment_build_number_in_plist
+
+    appversion = get_version_number_from_plist
+
+    buildversion = get_build_number_from_plist
+
+    # 打标签
+    add_git_tag(
+      tag: appversion+"("+buildversion+")"
+    )
+
+    # 推送
+    push_to_git_remote
+
+
+  end
+
   after_all do |lane|
     # This block is called, only if the executed lane was successful
 
